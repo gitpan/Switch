@@ -34,3 +34,10 @@ Revision history for Perl extension Switch.
 
 	- Silenced gratuitous warnings for undefined values as
 	  switch or case values
+
+
+2.04	Mon Jul 30 13:17:35 2001
+
+	- Suppressed 'undef value' warning under -w (thanks Michael)
+
+	- Added support for Perl 6 given..when syntax

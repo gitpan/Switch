@@ -1,5 +1,5 @@
 ==============================================================================
-                      Release of version 2.03 of Switch
+                      Release of version 2.04 of Switch
 ==============================================================================
 
 
@@ -27,13 +27,12 @@ COPYRIGHT
 
 ==============================================================================
 
-CHANGES IN VERSION 2.03
+CHANGES IN VERSION 2.04
 
 
-	- Fixed bug in 'fallthrough' specifications.
+	- Suppressed 'undef value' warning under -w (thanks Michael)
 
-	- Silenced gratuitous warnings for undefined values as
-	  switch or case values
+	- Added support for Perl 6 given..when syntax
 
 
 ==============================================================================

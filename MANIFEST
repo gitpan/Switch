@@ -1,6 +1,7 @@
 Changes
 MANIFEST
 Makefile.PL
+README
 Switch.pm
-test.pl
-demo.pl
+t/switch_case.t
+t/given_when.t
