@@ -1,3 +1,10 @@
+BEGIN {
+    if ($ENV{PERL_CORE}) {
+        chdir('t') if -d 't';
+        @INC = qw(../lib);
+    }
+}
+
 use Switch;
 
 print "1..4\n";
