@@ -26,3 +26,11 @@ Revision history for Perl extension Switch.
 
 	- Fixed pernicious bug that cause switch to fail to recognize
 	  certain complex switch values
+
+
+2.03	Tue May 15 09:34:11 2001
+
+	- Fixed bug in 'fallthrough' specifications.
+
+	- Silenced gratuitous warnings for undefined values as
+	  switch or case values
