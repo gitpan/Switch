@@ -3,5 +3,6 @@ MANIFEST
 Makefile.PL
 README
 Switch.pm
-t/switch_case.t
-t/given_when.t
+t/given.t
+t/nested.t
+t/switch.t
