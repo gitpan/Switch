@@ -1,5 +1,5 @@
 ==============================================================================
-                      Release of version 1.00 of Switch
+                      Release of version 2.00 of Switch
 ==============================================================================
 
 
@@ -27,9 +27,12 @@ COPYRIGHT
 
 ==============================================================================
 
-CHANGES IN VERSION 1.00
+CHANGES IN VERSION 2.00
 
-(No changes have been documented for this version)
+
+	- Complete revamp (including syntactic and semantic changes)
+	  in line with proposed Perl 6 semantics.
+
 
 ==============================================================================
 

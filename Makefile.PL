@@ -2,5 +2,7 @@
 use ExtUtils::MakeMaker;
 WriteMakefile(
 		NAME	=> 'Switch',
-		VERSION => '1.00',
+		VERSION => '2.00',
+		PREREQ_PM => { Filter::Util::Call => 0, Text::Balanced     => 0 },
+
 	     );

@@ -1,9 +1,9 @@
 #! /usr/local/bin/perl -w
 
 use Carp;
-use Switch '__';
+use Switch qw(__ fallthrough);
 
-print "1..285\n";
+print "1..284\n";
 
 my $count = 0;
 sub ok($)
@@ -26,17 +26,19 @@ eval { case 1 { ok(0) }; ok(0) } || ok(1);
 
 # H.O. FUNCS
 
-switch __ > 2;
+switch (__ > 2) {
 
 	case 1	{ ok(0) } else { ok(1) }
 	case 2	{ ok(0) } else { ok(1) }
 	case 3	{ ok(1) } else { ok(0) }
+}
 
-switch 3;
+switch (3) {
 
 	eval { case __ <= 1 || __ > 2	{ ok(0) } } || ok(1);
 	case __ <= 2 		{ ok(0) };
 	case __ <= 3		{ ok(1) };
+}
 
 # POSSIBLE ARGS: NUMERIC, STRING, ARRAY, HASH, REGEX, CODE
 
@@ -44,23 +46,26 @@ switch 3;
 
 for (1..3)
 {
-	switch $_;
+	switch ($_) {
 		# SELF
 		case ($_) { ok(1) } else { ok(0) }
 
 		# NUMERIC
 		case (1) { ok ($_==1) } else { ok($_!=1) }
+		case  1  { ok ($_==1) } else { ok($_!=1) }
 		case (3) { ok ($_==3) } else { ok($_!=3) }
 		case (4) { ok (0) } else { ok(1) }
 		case (2) { ok ($_==2) } else { ok($_!=2) }
 
 		# STRING
 		case ('a') { ok (0) } else { ok(1) }
+		case  'a'  { ok (0) } else { ok(1) }
 		case ('3') { ok ($_ == 3) } else { ok($_ != 3) }
 		case ('3.0') { ok (0) } else { ok(1) }
 
 		# ARRAY
 		case ([10,5,1]) { ok ($_==1) } else { ok($_!=1) }
+		case  [10,5,1]  { ok ($_==1) } else { ok($_!=1) }
 		case (['a','b']) { ok (0) } else { ok(1) }
 		case (['a','b',3]) { ok ($_==3) } else { ok ($_!=3) }
 		case (['a','b',2.0]) { ok ($_==2) } else { ok ($_!=2) }
@@ -77,6 +82,7 @@ for (1..3)
 		case {$_[0]==2} { ok ($_==2) } else { ok($_!=2) }
 		case {0} { ok (0) } else { ok (1) }	# ; -> SUB, NOT HASH
 		case {1} { ok (1) } else { ok (0) }	# ; -> SUB, NOT HASH
+	}
 }
 
 
@@ -84,7 +90,7 @@ for (1..3)
 
 for ('a'..'c','1')
 {
-	switch $_;
+	switch ($_) {
 		# SELF
 		case ($_) { ok(1) } else { ok(0) }
 
@@ -116,6 +122,7 @@ for ('a'..'c','1')
 		case {$_[0] eq 'a'} { ok ($_ eq 'a') } else { ok($_ ne 'a') }
 		case {0} { ok (0) } else { ok (1) }	# ; -> SUB, NOT HASH
 		case {1} { ok (1) } else { ok (0) }	# ; -> SUB, NOT HASH
+	}
 }
 
 
@@ -124,10 +131,10 @@ for ('a'..'c','1')
 my $iteration = 0;
 for ([],[1,'a'],[2,'b'])
 {
-	switch $_;
+	switch ($_) {
 	$iteration++;
 		# SELF
-		case ($_) { ok($iteration!=1) } else { ok($iteration==1) }
+		case ($_) { ok(1) }
 
 		# NUMERIC
 		case (1) { ok ($iteration==2) } else { ok ($iteration!=2) }
@@ -156,6 +163,7 @@ for ([],[1,'a'],[2,'b'])
 			else { ok ($iteration!=2) }
 		case {0} { ok (0) } else { ok (1) }	# ; -> SUB, NOT HASH
 		case {1} { ok (1) } else { ok (0) }	# ; -> SUB, NOT HASH
+	}
 }
 
 
@@ -164,7 +172,7 @@ for ([],[1,'a'],[2,'b'])
 $iteration = 0;
 for ({},{a=>1,b=>0})
 {
-	switch $_;
+	switch ($_) {
 	$iteration++;
 
 		# SELF
@@ -199,6 +207,7 @@ for ({},{a=>1,b=>0})
 			else { ok ($iteration!=2) }
 		case {0} { ok (0) } else { ok (1) }	# ; -> SUB, NOT HASH
 		case {1} { ok (1) } else { ok (0) }	# ; -> SUB, NOT HASH
+	}
 }
 
 
@@ -215,7 +224,7 @@ for ( sub {1},
 	  },
       sub {0} )
 {
-	switch $_;
+	switch ($_) {
 	$iteration++;
 		# SELF
 		case ($_) { ok(1) } else { ok(0) }
@@ -252,6 +261,7 @@ for ( sub {1},
 		case (sub {$_[0]{a}}) { ok (0) } else { ok (1) }
 		case {0} { ok (0) } else { ok (1) }	# ; -> SUB, NOT HASH
 		case {1} { ok (0) } else { ok (1) }	# ; -> SUB, NOT HASH
+	}
 }
 
 
@@ -259,13 +269,13 @@ for ( sub {1},
 
 for my $count (1..3)
 {
-	switch [9,"a",11];
-	{
+	switch ([9,"a",11]) {
 		case (qr/\d/) {
-				switch $count;
+				switch ($count) {
 					case (1)     { ok($count==1) }
 						else { ok($count!=1) }
 					case ([5,6]) { ok(0) } else { ok(1) }
+				}
 			    }
 		ok(1) case (11);
 	}
