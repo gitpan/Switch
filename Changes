@@ -9,3 +9,11 @@ Revision history for Perl extension Switch.
 
 	- Complete revamp (including syntactic and semantic changes)
 	  in line with proposed Perl 6 semantics.
+
+
+2.01	Tue Jan  9 07:19:02 2001
+
+	- Fixed infinite loop problem under 5.6.0 caused by change
+	  in goto semantics between 5.00503 and 5.6.0
+	  (thanks Scott!)
+	  

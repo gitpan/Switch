@@ -4,7 +4,7 @@ use strict;
 use vars qw($VERSION);
 use Carp;
 
-$VERSION = '2.00';
+$VERSION = '2.01';
 
 
 # LOAD FILTERING MODULE...
@@ -18,6 +18,7 @@ $::_S_W_I_T_C_H = sub { croak "case statement not in switch block" };
 
 my $offset;
 my $fallthrough;
+my $nextlabel = 1;
 
 sub import
 {
@@ -70,13 +71,13 @@ sub is_block
 	return !$ishash;
 }
 
+my $casecounter = 1;
 sub filter_blocks
 {
 	my ($source, $line) = @_;
 	return $source unless $source =~ /case|switch/;
 	pos $source = 0;
 	my $text = "";
-	my $casecounter = 1;
 	component: while (pos $source < length $source)
 	{
 		if ($source =~ m/(\G\s*use\s+switch\b)/gc)
@@ -453,8 +454,8 @@ Switch - A switch statement for Perl
 
 =head1 VERSION
 
-This document describes version 2.00 of Switch,
-released January  8, 2001.
+This document describes version 2.01 of Switch,
+released January  9, 2001.
 
 =head1 SYNOPSIS
 

@@ -3,7 +3,7 @@
 use Carp;
 use Switch qw(__ fallthrough);
 
-print "1..284\n";
+print "1..293\n";
 
 my $count = 0;
 sub ok($)
