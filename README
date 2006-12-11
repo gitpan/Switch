@@ -1,5 +1,5 @@
 ==============================================================================
-                      Release of version 2.11 of Switch
+                      Release of version 2.12 of Switch
 ==============================================================================
 
 
@@ -27,11 +27,10 @@ COPYRIGHT
 
 ==============================================================================
 
-CHANGES IN VERSION 2.11
+CHANGES IN VERSION 2.12
 
 
-	- Fix documentation issues
-	- Fix installation directory for perls >= 5.7.3 (Slaven Rezic)
+	- Fix bug in parsing POD at end of document (Valentin Guignon)
 
 
 ==============================================================================
