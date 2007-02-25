@@ -1,5 +1,5 @@
 ==============================================================================
-                      Release of version 2.12 of Switch
+                      Release of version 2.13 of Switch
 ==============================================================================
 
 
@@ -17,20 +17,19 @@ DESCRIPTION
 
 AUTHOR
     Damian Conway (damian@conway.org)
-    Maintained by Rafael Garcia-Suarez (rgarciasuarez@free.fr)
+    Maintained by Rafael Garcia-Suarez (rgarciasuarez@gmail.com)
 
 COPYRIGHT
-    Copyright (c) 1997-2006, Damian Conway. All Rights Reserved.
+    Copyright (c) 1997-2007, Damian Conway. All Rights Reserved.
     This module is free software. It may be used, redistributed
         and/or modified under the same terms as Perl itself.
 
 
 ==============================================================================
 
-CHANGES IN VERSION 2.12
+CHANGES IN VERSION 2.13
 
-
-	- Fix bug in parsing POD at end of document (Valentin Guignon)
+	- Fix bug in parsing division statements (Wolfgang Laun)
 
 
 ==============================================================================

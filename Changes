@@ -88,3 +88,7 @@ Revision history for Perl extension Switch.
 2.12	Mon Dec 11 2006
 
 	- Fix bug in parsing POD at end of document (Valentin Guignon)
+
+2.13	Sun Feb 25 2007
+
+	- Fix bug in parsing division statements (Wolfgang Laun)
