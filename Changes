@@ -92,3 +92,22 @@ Revision history for Perl extension Switch.
 2.13	Sun Feb 25 2007
 
 	- Fix bug in parsing division statements (Wolfgang Laun)
+
+2.14	Mon Dec 29 2008
+
+	- Make Switch.pm skip POD like perl does
+	  Patch provided by Daniel Klein <danielklein--airpost.net>
+	  (bleadperl commit 39bcdda02ea582e7bdf8b0cf2e7186e89c6baea9)
+
+	- Fix line numbering issues with POD filtered by Switch.pm
+	  Patch provided by Daniel Klein <danielklein--airpost.net>
+	  (bleadperl commit 6a9befb105d93024902eb178dab77655333f1829)
+
+	- Switch.pm doesn't appear to support plain arrays and hashes in case().
+	  (bleadperl commit cd3d9d47255d3080961ba7b58c9a145c7b45b905)
+
+	- Let us direct Switch questions to P5P.
+	  (bleadperl commit b62fb10ea98565ce5572416500e1e3517cb17d33)
+
+	- POD nits from Frank Wiegand <frank.wiegand@gmail.com>
+	  (bleadperl commit 3b46207fed7bf69caa32c27c04bd239cfb64cb53)

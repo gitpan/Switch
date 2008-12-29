@@ -1,5 +1,5 @@
 ==============================================================================
-                      Release of version 2.13 of Switch
+                      Release of version 2.14 of Switch
 ==============================================================================
 
 
@@ -18,27 +18,9 @@ DESCRIPTION
 AUTHOR
     Damian Conway (damian@conway.org)
     Maintained by Rafael Garcia-Suarez (rgarciasuarez@gmail.com)
+    and the Perl 5 porters (perl5-porters@gmail.com)
 
 COPYRIGHT
-    Copyright (c) 1997-2007, Damian Conway. All Rights Reserved.
+    Copyright (c) 1997-2008, Damian Conway. All Rights Reserved.
     This module is free software. It may be used, redistributed
         and/or modified under the same terms as Perl itself.
-
-
-==============================================================================
-
-CHANGES IN VERSION 2.13
-
-	- Fix bug in parsing division statements (Wolfgang Laun)
-
-
-==============================================================================
-
-AVAILABILITY
-
-Switch has been uploaded to the CPAN
-and is also available from:
-
-	http://www.csse.monash.edu.au/~damian/CPAN/Switch.tar.gz
-
-==============================================================================
