@@ -16,11 +16,11 @@ eval { when 1 { ok(0) }; ok(0) } || ok(1);
 
 # H.O. FUNCS
 
-given __ > 2 {
+given 2 {
 
-	when 1	{ ok(0) } else { ok(1) }
-	when 2	{ ok(0) } else { ok(1) }
-	when 3	{ ok(1) } else { ok(0) }
+	when __ < 1	{ ok(0) } else { ok(1) }
+	when __ < 2	{ ok(0) } else { ok(1) }
+	when __ < 3	{ ok(1) } else { ok(0) }
 }
 
 given (3) {
